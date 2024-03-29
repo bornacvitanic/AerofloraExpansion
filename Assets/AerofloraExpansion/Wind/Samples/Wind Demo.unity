@@ -204,7 +204,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -294,7 +294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228640cb35a54deda58fe7a3b01e75be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windController: {fileID: 1910083738}
 --- !u!54 &518631560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -635,7 +634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d33ab2330154fabac61543b8f7681fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windController: {fileID: 1910083738}
   treeRenderer: {fileID: 1425544441}
 --- !u!65 &1425544440
 BoxCollider:
@@ -5687,6 +5685,7 @@ GameObject:
   - component: {fileID: 1910083740}
   - component: {fileID: 1910083739}
   - component: {fileID: 1910083738}
+  - component: {fileID: 1910083741}
   m_Layer: 0
   m_Name: WindZone
   m_TagString: Untagged
@@ -5739,6 +5738,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1910083741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910083737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9961f78ccbe44729b7168ef8c332ea2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windController: {fileID: 1910083738}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
