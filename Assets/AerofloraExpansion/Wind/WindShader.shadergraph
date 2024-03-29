@@ -8,6 +8,9 @@
         },
         {
             "m_Id": "51ae127b88884da9bca06f6aa909c3ad"
+        },
+        {
+            "m_Id": "e8250e130bcb4ea7a7eb5c6e3f499c3f"
         }
     ],
     "m_Keywords": [],
@@ -95,6 +98,9 @@
         },
         {
             "m_Id": "6961a11b03504a6e98d11434d254af50"
+        },
+        {
+            "m_Id": "8824661b1ef041498201a9b24b2b9a74"
         }
     ],
     "m_GroupDatas": [],
@@ -278,6 +284,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "efcd1989d9614eb099b0be381e081b42"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "8824661b1ef041498201a9b24b2b9a74"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "79218e25271d47e2aca52a8ab2ae2f69"
                 },
                 "m_SlotId": 0
             }
@@ -2017,6 +2037,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "8824661b1ef041498201a9b24b2b9a74",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -340.79998779296877,
+            "y": 244.0,
+            "width": 105.60003662109375,
+            "height": 33.5999755859375
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "c7a2d9eab1b94f17bb4a8df6226f9714"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "e8250e130bcb4ea7a7eb5c6e3f499c3f"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SplitNode",
     "m_ObjectId": "891f445a6e954a789b4a74834988c77a",
     "m_Group": {
@@ -2406,6 +2462,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "c7a2d9eab1b94f17bb4a8df6226f9714",
+    "m_Id": 0,
+    "m_DisplayName": "Color",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "ccd02f79ce154f3ba9448d5798dcecfc",
     "m_Id": 3,
@@ -2650,6 +2731,36 @@
 }
 
 {
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "e8250e130bcb4ea7a7eb5c6e3f499c3f",
+    "m_Guid": {
+        "m_GuidSerialized": "8eb6be38-141a-431b-b1c8-6a5fb9941dc8"
+    },
+    "m_Name": "Color",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Color",
+    "m_DefaultReferenceName": "_Color",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+    },
+    "isMainColor": false,
+    "m_ColorMode": 0
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "e95f884194074935b128a7a97fbdcf5a",
@@ -2834,6 +2945,9 @@
     "m_ObjectId": "f966a0bf87eb41db957d7c13698d26eb",
     "m_Name": "",
     "m_ChildObjectList": [
+        {
+            "m_Id": "e8250e130bcb4ea7a7eb5c6e3f499c3f"
+        },
         {
             "m_Id": "a10a147d009a407aa7316bc3982798a8"
         },
