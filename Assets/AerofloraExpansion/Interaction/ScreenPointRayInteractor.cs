@@ -21,6 +21,7 @@ namespace AerofloraExpansion.Interaction
 
         private void OnDrawGizmos()
         {
+            if (!Application.isPlaying) return;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Gizmos.DrawLine(ray.origin, ray.direction*maxDistance);
         }
