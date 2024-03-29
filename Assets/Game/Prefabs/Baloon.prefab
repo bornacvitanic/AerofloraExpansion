@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 6824595916761262039}
   - component: {fileID: 9143578819298806177}
   - component: {fileID: 4394394748732654250}
+  - component: {fileID: 512213390755186132}
   m_Layer: 0
   m_Name: Baloon
   m_TagString: Untagged
@@ -242,3 +243,30 @@ MonoBehaviour:
   seedSpawnInterval: 1
   seedInitialVelocity: 3
   origin: {fileID: 7908876970538229132}
+--- !u!114 &512213390755186132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867420516338610414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7bdc34673e4b849882a9a16a5d956c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteracted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4394394748732654250}
+        m_TargetAssemblyTypeName: AerofloraExpansion.Planting.SeedDispenser, AerofloraExpansion.Planting
+        m_MethodName: StartDispensing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
