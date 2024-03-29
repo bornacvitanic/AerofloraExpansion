@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 518631561}
   - component: {fileID: 518631560}
   - component: {fileID: 518631559}
+  - component: {fileID: 518631565}
   m_Layer: 0
   m_Name: Baloon
   m_TagString: Untagged
@@ -316,7 +317,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -407,6 +408,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518631565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518631558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff5d352ae674b9eaab2a5f03306fdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  liftForce: 10
 --- !u!1 &936309798
 GameObject:
   m_ObjectHideFlags: 0
