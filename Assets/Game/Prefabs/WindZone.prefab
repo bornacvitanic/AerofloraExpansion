@@ -61,9 +61,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windZone: {fileID: 8327903865359277281}
-  baseWindStrength: 0.5
+  baseWindStrength: 2
   turbulenceStrength: 0.5
-  directionChangeSpeed: 1
+  directionChangeSpeed: 3
 --- !u!114 &2737998524824253420
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ae6df6c4ed05f4898815dd41f4c724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantPrefabToSpawn: {fileID: 919132149155446097, guid: 295545ca44ecaa74694ebe33765533d2,
+  plantPrefabToSpawn: {fileID: 5056000061303201918, guid: ca5c948344ae0ca40b94f58e4216d3f6,
     type: 3}
 --- !u!1 &6937904417354323270
 GameObject:
@@ -104,7 +104,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4206017942148599264}
@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8a9f895c3e7907040b8d411ca1662510, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
