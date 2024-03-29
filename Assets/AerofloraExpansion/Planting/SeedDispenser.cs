@@ -24,20 +24,22 @@ namespace AerofloraExpansion.Planting
         }
 
         [ContextMenu("StartDispensing")]
-        private void StartDispensing()
+        public void StartDispensing()
         {
             if (seedPrefabs == null)
             {
                 Debug.LogWarning("Seed prefab is not assigned in Seed Dispenser.");
                 return;
             }
+            
+            if (_seedSpawningCoroutine != null) return;
 
             // Start spawning seeds
             _seedSpawningCoroutine = StartCoroutine(SpawnSeedRoutine());
         }
 
         [ContextMenu("StopDispensing")]
-        private void StopDispensing()
+        public void StopDispensing()
         {
             if (_seedSpawningCoroutine == null) return;
             StopCoroutine(_seedSpawningCoroutine);
