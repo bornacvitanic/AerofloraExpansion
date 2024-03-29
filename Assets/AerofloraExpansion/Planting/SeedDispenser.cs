@@ -9,6 +9,7 @@ namespace AerofloraExpansion.Planting
         [SerializeField] private List<GameObject> seedPrefabs; // Better to be a SO
         [SerializeField] private float seedSpawnInterval;
         [SerializeField] private float seedInitialVelocity;
+        [SerializeField] private Transform origin;
 
         private Coroutine _seedSpawningCoroutine;
 
@@ -67,7 +68,7 @@ namespace AerofloraExpansion.Planting
             Vector3 initialVelocity = coneDirection * seedInitialVelocity;
 
             // Instantiate a random seed from list
-            GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count - 1)], transform.position, Quaternion.identity);
+            GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count - 1)], origin.position, Quaternion.identity);
 
 
             // Apply initial velocity
