@@ -10,13 +10,13 @@ namespace AerofloraExpansion.Planting
         [SerializeField] private float seedSpawnInterval;
         [SerializeField] private float seedInitialVelocity;
 
-        private Seed _seedPrefab;
         private Coroutine _seedSpawningCoroutine;
 
         private void OnValidate()
         {
             for (int i = seedPrefabs.Count - 1; i >= 0; i--)
             {
+                Seed _seedPrefab;
                 if (!seedPrefabs[i].TryGetComponent(out _seedPrefab))
                     seedPrefabs.RemoveAt(i);
             }
