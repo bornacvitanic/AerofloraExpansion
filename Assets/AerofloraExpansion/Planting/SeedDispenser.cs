@@ -60,7 +60,7 @@ namespace AerofloraExpansion.Planting
                 return;
             }
 
-            // coneDirection is a unit Vector3 that has a -y from origin
+            // coneDirection is a unit Vector3 that has a -y from origin. This can be replaced with a vector3 perhaps to have flexibility
             Vector3 coneDirection = Random.onUnitSphere;
             coneDirection.y = -Mathf.Abs(coneDirection.y);
 
@@ -68,6 +68,7 @@ namespace AerofloraExpansion.Planting
 
             // Instantiate a random seed from list
             GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count - 1)], transform.position, Quaternion.identity);
+
 
             // Apply initial velocity
             Rigidbody seedRigidbody;
