@@ -1,13 +1,10 @@
 using UnityEngine;
 
-namespace AerofloraExpansion.Wind
+namespace AerofloraExpansion.Wind.Components
 {
     [RequireComponent(typeof(AudioSource))]
-    public class WindSoundModulator : MonoBehaviour
+    public class WindSoundModulator : WindAffected
     {
-        [SerializeField]
-        private WindController windController; // Assign this in the Inspector
-
         [SerializeField]
         private float minVolume = 0.1f; // Minimum volume, at no wind
 
@@ -23,25 +20,11 @@ namespace AerofloraExpansion.Wind
         {
             audioSource = GetComponent<AudioSource>();
         }
-
-        private void Update()
+        
+        public override void ApplyWindForce(Vector3 windDirection, float windStrength)
         {
-            if (windController == null)
-            {
-                Debug.LogError("WindController reference not set.");
-                return;
-            }
-
-            ModulateVolumeBasedOnWind();
-        }
-
-        private void ModulateVolumeBasedOnWind()
-        {
-            // Get current wind strength from the WindController
-            float currentWindStrength = windController.WindStrength;
-
             // Normalize the wind strength to a 0-1 range based on the defined max wind strength
-            float normalizedStrength = Mathf.Clamp01(currentWindStrength / maxWindStrength);
+            float normalizedStrength = Mathf.Clamp01(windStrength / maxWindStrength);
 
             // Lerp the volume based on the normalized wind strength
             audioSource.volume = Mathf.Lerp(minVolume, maxVolume, normalizedStrength);
