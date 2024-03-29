@@ -11,7 +11,7 @@ namespace AerofloraExpansion.Interaction
         private Ray ray;
         public void TriggerInteraction()
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            ray = GetRay();
             if (!Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance,layerMask)) return;
             foreach (var interactable in hitInfo.transform.gameObject.GetComponents<IInteractable>())
             {
@@ -19,10 +19,20 @@ namespace AerofloraExpansion.Interaction
             }
         }
 
+        private Ray GetRay()
+        {
+            var mainCam = Camera.main;
+            if (mainCam == null) return new Ray();
+            if (!mainCam.orthographic) return mainCam.ScreenPointToRay(Input.mousePosition);
+            Vector3 rayOrigin = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.nearClipPlane));
+            return new Ray(rayOrigin, mainCam.transform.forward);
+
+        }
+
         private void OnDrawGizmos()
         {
             if (!Application.isPlaying) return;
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var ray = GetRay();
             Gizmos.DrawLine(ray.origin, ray.direction*maxDistance);
         }
     }
