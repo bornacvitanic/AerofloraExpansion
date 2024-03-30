@@ -9,7 +9,7 @@ public class RandomEnviromentSpawner : MonoBehaviour
     [SerializeField] private int spawnCountAttempts = 10;
     [SerializeField] private List<GameObject> prefabsToSpawn;
     [SerializeField] private LayerMask layerMaskForSpawning = -1;
-    [SerializeField] private Vector2 spawningBox;
+    [SerializeField] private Bounds spawningBounds;
 
     private void Start()
     {
@@ -33,21 +33,25 @@ public class RandomEnviromentSpawner : MonoBehaviour
 
     private void SpawnPrefab()
     {
-        Vector3 sPos = transform.position;
-        float newX = sPos.x + Random.Range(-spawningBox.x / 2, spawningBox.x / 2);
-        float newZ = sPos.z + Random.Range(-spawningBox.y / 2, spawningBox.y / 2);
-        Vector3 pos = new Vector3(newX, sPos.y, newZ);
-
         RaycastHit hit;
-        if(Physics.Raycast(pos, Vector3.down, out hit, 100, layerMaskForSpawning))
+        if(Physics.Raycast(GetCalculatedRandomPosition(), Vector3.down, out hit, spawningBounds.extents.y, layerMaskForSpawning))
         {
             Instantiate(prefabsToSpawn[0], hit.point, Quaternion.identity, enviromentParent);
         }
     }
 
+    private Vector3 GetCalculatedRandomPosition()
+    {
+        Vector3 sPos = transform.position;
+        float newX = spawningBounds.center.x + sPos.x + Random.Range(-spawningBounds.extents.x / 2, spawningBounds.extents.x / 2);
+        float newZ = spawningBounds.center.z + sPos.z + Random.Range(-spawningBounds.extents.z / 2, spawningBounds.extents.z / 2);
+        return new Vector3(newX, sPos.y, newZ);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, new Vector3(spawningBox.x, 0, spawningBox.y));
+        Gizmos.DrawWireCube(transform.position + spawningBounds.center - new Vector3(0, spawningBounds.extents.y/2, 0), spawningBounds.extents);
     }
 }
+    

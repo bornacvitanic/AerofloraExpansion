@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1529478333795801997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 641, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enviromentParent: {fileID: 0}
-  spawnCountAttempts: 10
+  spawnCountAttempts: 100
   prefabsToSpawn:
   - {fileID: 5056000061303201918, guid: ca5c948344ae0ca40b94f58e4216d3f6, type: 3}
   layerMaskForSpawning:
     serializedVersion: 2
     m_Bits: 64
-  spawningBox: {x: 200, y: 200}
+  spawningBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 200, y: 100, z: 200}
