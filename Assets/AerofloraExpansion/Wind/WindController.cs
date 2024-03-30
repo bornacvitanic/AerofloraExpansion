@@ -33,18 +33,31 @@ namespace AerofloraExpansion.Wind
             SimulateWind();
             ApplyWindToZone();
         }
-
+        
+        private Vector3 targetWindDirection;
+        private float directionChangeFrequency = 0.1f; // How quickly the wind direction can change
+        private float lastDirectionUpdateTime = 0;
+        private Vector2 perlinOffset = new Vector2(100, 200); // Arbitrary offsets for Perlin noise
         private void SimulateWind()
         {
-            // Create a smooth transition for wind direction and strength changes
-            float time = Time.time;
-            WindDirection = new Vector3(
-                Mathf.PerlinNoise(time, 0) * 2 - 1,
-                0, // Assuming wind only changes direction on the horizontal plane
-                Mathf.PerlinNoise(time, 1) * 2 - 1
-            ).normalized;
+            float timeSinceLastUpdate = Time.time - lastDirectionUpdateTime;
 
-            windStrength = baseWindStrength + (Mathf.PerlinNoise(time, 2) * 2 - 1) * turbulenceStrength;
+            if (timeSinceLastUpdate > directionChangeSpeed)
+            {
+                float perlinTime = Time.time * directionChangeFrequency;
+        
+                // Using Perlin noise with offset to make the direction change more gradually
+                float perlinX = Mathf.PerlinNoise(perlinTime + perlinOffset.x, 0) * 2 - 1;
+                float perlinZ = Mathf.PerlinNoise(perlinTime + perlinOffset.y, 0) * 2 - 1;
+
+                targetWindDirection = new Vector3(perlinX, 0, perlinZ).normalized;
+
+                lastDirectionUpdateTime = Time.time;
+            }
+
+            WindDirection = Vector3.Lerp(WindDirection, targetWindDirection, timeSinceLastUpdate / directionChangeSpeed).normalized;
+
+            windStrength = baseWindStrength + (Mathf.PerlinNoise(Time.time * directionChangeFrequency + perlinOffset.x, perlinOffset.y) * 2 - 1) * turbulenceStrength;
         }
 
         private void ApplyWindToZone()
