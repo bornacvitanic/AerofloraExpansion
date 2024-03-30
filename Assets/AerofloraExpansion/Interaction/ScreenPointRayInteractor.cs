@@ -22,11 +22,10 @@ namespace AerofloraExpansion.Interaction
         private Ray GetRay()
         {
             var mainCam = Camera.main;
-            if (mainCam == null) return new Ray();
+            if (mainCam == null || !Application.isFocused) return new Ray();
             if (!mainCam.orthographic) return mainCam.ScreenPointToRay(Input.mousePosition);
             Vector3 rayOrigin = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.nearClipPlane));
             return new Ray(rayOrigin, mainCam.transform.forward);
-
         }
 
         private void OnDrawGizmos()
