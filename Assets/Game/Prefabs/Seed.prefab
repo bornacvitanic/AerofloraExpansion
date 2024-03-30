@@ -76,6 +76,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantPrefabToSpawn: {fileID: 5056000061303201918, guid: ca5c948344ae0ca40b94f58e4216d3f6,
     type: 3}
+  layerMaskForPlanting:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &3595116159760712077
 MonoBehaviour:
   m_ObjectHideFlags: 0
