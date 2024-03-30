@@ -13,6 +13,12 @@ public class RandomEnviromentSpawner : MonoBehaviour
 
     private void Start()
     {
+        Spawn();
+    }
+
+    [ContextMenu("SpawnPrefabs")]
+    public void Spawn()
+    {
         StartCoroutine(SpawnPrefabs());
     }
 
