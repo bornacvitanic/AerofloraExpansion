@@ -11,7 +11,8 @@ namespace AerofloraExpansion.Wind
 
         public Vector3 WindDirection { get; private set; }
         public float WindStrength => windZone.windMain;
-        
+
+        private Vector3 windDirection;
         private float windStrength;
         private float lastWindStrength;
 
@@ -37,7 +38,7 @@ namespace AerofloraExpansion.Wind
         private Vector3 targetWindDirection;
         private float directionChangeFrequency = 0.1f; // How quickly the wind direction can change
         private float lastDirectionUpdateTime = 0;
-        private Vector2 perlinOffset = new Vector2(100, 200); // Arbitrary offsets for Perlin noise
+        private Vector2 perlinOffset = new(100, 200); // Arbitrary offsets for Perlin noise
         private void SimulateWind()
         {
             float timeSinceLastUpdate = Time.time - lastDirectionUpdateTime;
@@ -55,14 +56,16 @@ namespace AerofloraExpansion.Wind
                 lastDirectionUpdateTime = Time.time;
             }
 
-            WindDirection = Vector3.Lerp(WindDirection, targetWindDirection, timeSinceLastUpdate / directionChangeSpeed).normalized;
+            windDirection = Vector3.Lerp(WindDirection, targetWindDirection, timeSinceLastUpdate / directionChangeSpeed).normalized;
 
             windStrength = baseWindStrength + (Mathf.PerlinNoise(Time.time * directionChangeFrequency + perlinOffset.x, perlinOffset.y) * 2 - 1) * turbulenceStrength;
         }
 
         private void ApplyWindToZone()
         {
-            windZone.transform.rotation = Quaternion.Lerp(windZone.transform.rotation, Quaternion.LookRotation(WindDirection), Time.deltaTime * directionChangeSpeed);
+            WindDirection = Vector3.Lerp(windZone.transform.forward, windDirection,
+                Time.deltaTime * directionChangeSpeed);
+            windZone.transform.rotation = Quaternion.LookRotation(WindDirection);
             windZone.windMain = Mathf.Lerp(lastWindStrength, windStrength, Time.deltaTime * directionChangeSpeed);
 
             // Update last values for smooth interpolation
