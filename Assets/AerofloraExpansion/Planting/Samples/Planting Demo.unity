@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &732899887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3769371768578443168, guid: 2de39e3f3c779034f8f13cfcdb12d365,
+    type: 3}
+  m_PrefabInstance: {fileID: 7546702693326567430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1082526391
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +233,7 @@ GameObject:
   - component: {fileID: 1355610407}
   - component: {fileID: 1355610406}
   - component: {fileID: 1355610405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +322,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -497,6 +503,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4145289627287403396, guid: 2de39e3f3c779034f8f13cfcdb12d365,
+        type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 732899887}
     - target: {fileID: 5867218309785995994, guid: 2de39e3f3c779034f8f13cfcdb12d365,
         type: 3}
       propertyPath: m_Name
