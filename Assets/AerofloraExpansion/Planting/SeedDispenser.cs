@@ -7,8 +7,8 @@ namespace AerofloraExpansion.Planting
     public class SeedDispenser : MonoBehaviour
     {
         [SerializeField] private List<GameObject> seedPrefabs; // Better to be a SO
-        [SerializeField] private float seedSpawnInterval;
-        [SerializeField] private float seedInitialVelocity;
+        [SerializeField] private float seedSpawnInterval = 1;
+        [SerializeField] private float seedInitialVelocity = 10;
         [SerializeField] private Transform origin;
 
         private Coroutine _seedSpawningCoroutine;
