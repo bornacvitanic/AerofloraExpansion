@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace AerofloraExpansion.Planting
 {
-    // Collider needed for colliding, rigidbody needed for physics
-    [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(Rigidbody))]
     public class Seed : MonoBehaviour
     {

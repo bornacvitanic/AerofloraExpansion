@@ -7,15 +7,19 @@ namespace AerofloraExpansion.Wind.Components
     {
         public Renderer treeRenderer;
         
-        private static readonly int WindDirection = Shader.PropertyToID("_WindDirection");
-        private static readonly int WindStrength = Shader.PropertyToID("_WindStrength");
+        private static readonly int WindOffset = Shader.PropertyToID("_WindOffset");
+        
+        private Vector3 accumulatedWindOffset = Vector3.zero;
 
         public override void ApplyWindForce(Vector3 windDirection, float windStrength)
         {
             if (treeRenderer == null) return;
 
-            treeRenderer.material.SetVector(WindDirection, windDirection);
-            treeRenderer.material.SetFloat(WindStrength, windStrength);
+            // Accumulate offset based on the current wind direction and strength
+            // Adjust the accumulation rate to fit your game's scale and speed
+            accumulatedWindOffset += windDirection * (windStrength * Time.deltaTime);
+
+            treeRenderer.material.SetVector(WindOffset, accumulatedWindOffset);
         }
     }
 }

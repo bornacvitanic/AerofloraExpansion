@@ -9,6 +9,7 @@ namespace AerofloraExpansion.Planting
         [SerializeField] private List<GameObject> seedPrefabs; // Better to be a SO
         [SerializeField] private float seedSpawnInterval;
         [SerializeField] private float seedInitialVelocity;
+        [SerializeField] private Transform origin;
 
         private Coroutine _seedSpawningCoroutine;
 
@@ -23,20 +24,22 @@ namespace AerofloraExpansion.Planting
         }
 
         [ContextMenu("StartDispensing")]
-        private void StartDispensing()
+        public void StartDispensing()
         {
             if (seedPrefabs == null)
             {
                 Debug.LogWarning("Seed prefab is not assigned in Seed Dispenser.");
                 return;
             }
+            
+            if (_seedSpawningCoroutine != null) return;
 
             // Start spawning seeds
             _seedSpawningCoroutine = StartCoroutine(SpawnSeedRoutine());
         }
 
         [ContextMenu("StopDispensing")]
-        private void StopDispensing()
+        public void StopDispensing()
         {
             if (_seedSpawningCoroutine == null) return;
             StopCoroutine(_seedSpawningCoroutine);
@@ -67,7 +70,7 @@ namespace AerofloraExpansion.Planting
             Vector3 initialVelocity = coneDirection * seedInitialVelocity;
 
             // Instantiate a random seed from list
-            GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count - 1)], transform.position, Quaternion.identity);
+            GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count - 1)], origin.position, Quaternion.identity);
 
 
             // Apply initial velocity
