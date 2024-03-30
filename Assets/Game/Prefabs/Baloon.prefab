@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedPrefabs:
+  - {fileID: 3377728032211877557, guid: c5eba262869663d4a8fd7c5df4016f2c, type: 3}
   - {fileID: 3377728032211877557, guid: 90c6fda91077d51419b971aafcb4d6c7, type: 3}
   seedSpawnInterval: 1
   seedInitialVelocity: 3
