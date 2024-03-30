@@ -70,7 +70,7 @@ namespace AerofloraExpansion.Planting
             Vector3 initialVelocity = coneDirection * seedInitialVelocity;
 
             // Instantiate a random seed from list
-            GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count - 1)], origin.position, Quaternion.identity);
+            GameObject newSeed = Instantiate(seedPrefabs[Random.Range(0, seedPrefabs.Count)], origin.position, Quaternion.identity);
 
 
             // Apply initial velocity
