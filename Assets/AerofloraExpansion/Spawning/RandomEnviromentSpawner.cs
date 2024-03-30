@@ -43,15 +43,15 @@ public class RandomEnviromentSpawner : MonoBehaviour
     private Vector3 GetCalculatedRandomPosition()
     {
         Vector3 sPos = transform.position;
-        float newX = spawningBounds.center.x + sPos.x + Random.Range(-spawningBounds.extents.x / 2, spawningBounds.extents.x / 2);
-        float newZ = spawningBounds.center.z + sPos.z + Random.Range(-spawningBounds.extents.z / 2, spawningBounds.extents.z / 2);
+        float newX = spawningBounds.center.x + sPos.x + Random.Range(-spawningBounds.extents.x, spawningBounds.extents.x);
+        float newZ = spawningBounds.center.z + sPos.z + Random.Range(-spawningBounds.extents.z, spawningBounds.extents.z);
         return new Vector3(newX, sPos.y, newZ);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + spawningBounds.center - new Vector3(0, spawningBounds.extents.y/2, 0), spawningBounds.extents);
+        Gizmos.DrawWireCube(transform.position + spawningBounds.center - new Vector3(0, spawningBounds.size.y, 0), spawningBounds.size);
     }
 }
     
