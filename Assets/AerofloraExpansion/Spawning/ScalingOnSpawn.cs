@@ -1,24 +1,27 @@
 using System.Collections;
 using UnityEngine;
 
-public class ScalingOnSpawn : MonoBehaviour
+namespace AerofloraExpansion.Spawning
 {
-    [SerializeField] private AnimationCurve scaleCurve;
-
-    private void Start()
+    public class ScalingOnSpawn : MonoBehaviour
     {
-        StartCoroutine(ScaleOverTime());
-    }
+        [SerializeField] private AnimationCurve scaleCurve;
 
-    private IEnumerator ScaleOverTime()
-    {
-        float currentTime = 0.0f;
-        while (currentTime <= scaleCurve.keys[^1].time)
+        private void Start()
         {
-            float curveValue = scaleCurve.Evaluate(currentTime / scaleCurve.keys[^1].time);
-            transform.localScale = new Vector3(curveValue, curveValue, curveValue);
-            currentTime += Time.deltaTime;
-            yield return null;
+            StartCoroutine(ScaleOverTime());
+        }
+
+        private IEnumerator ScaleOverTime()
+        {
+            float currentTime = 0.0f;
+            while (currentTime <= scaleCurve.keys[^1].time)
+            {
+                float curveValue = scaleCurve.Evaluate(currentTime / scaleCurve.keys[^1].time);
+                transform.localScale = new Vector3(curveValue, curveValue, curveValue);
+                currentTime += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 }
