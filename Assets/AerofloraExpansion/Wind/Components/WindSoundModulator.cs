@@ -25,7 +25,7 @@ namespace AerofloraExpansion.Wind.Components
         public override void ApplyWindForce(Vector3 windDirection, float windStrength)
         {
             // Normalize the wind strength to a 0-1 range based on the defined max wind strength
-            float normalizedStrength = Mathf.Clamp01(windStrength / maxWindStrength);
+            float normalizedStrength = Mathf.Clamp01(Mathf.Abs(windStrength) / maxWindStrength);
 
             // Lerp the volume based on the normalized wind strength
             audioSource.volume = Mathf.Lerp(minVolume, maxVolume, normalizedStrength);

@@ -7,14 +7,23 @@ namespace AerofloraExpansion.Wind
 {
     public class WindTransmitter : MonoBehaviour
     {
-        public static WindTransmitter Instance;
-        
+        private static WindTransmitter instance;
+
+        public static WindTransmitter Instance
+        {
+            get
+            {
+                if (instance == null) instance = FindObjectOfType<WindTransmitter>();
+                return instance;
+            }
+        }
+
         [SerializeField] private WindController windController;
         private List<IWindAffected> windAffecteds = new();
 
         private void Awake()
         {
-            Instance = this;
+            instance = this;
         }
 
         public void Add(IWindAffected windAffected)
