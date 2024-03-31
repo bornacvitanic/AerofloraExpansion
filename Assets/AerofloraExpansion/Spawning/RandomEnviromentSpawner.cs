@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class RandomEnviromentSpawner : MonoBehaviour
 {
@@ -36,7 +35,7 @@ public class RandomEnviromentSpawner : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(GetCalculatedRandomPosition(), Vector3.down, out hit, spawningBounds.extents.y, layerMaskForSpawning))
         {
-            Instantiate(prefabsToSpawn[0], hit.point, Quaternion.identity, enviromentParent);
+            Instantiate(prefabsToSpawn[Random.Range(0, prefabsToSpawn.Count)], hit.point, Quaternion.Euler(new Vector3(0,90*Random.Range(0,4), 0)), enviromentParent);
         }
     }
 
