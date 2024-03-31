@@ -13,7 +13,7 @@ namespace AerofloraExpansion.Wind
         {
             get
             {
-                if (instance == null) instance = FindObjectOfType<WindTransmitter>();
+                if (instance == null && !destroyed) instance = FindObjectOfType<WindTransmitter>();
                 return instance;
             }
         }
@@ -21,9 +21,16 @@ namespace AerofloraExpansion.Wind
         [SerializeField] private WindController windController;
         private List<IWindAffected> windAffecteds = new();
 
+        private static bool destroyed;
+
         private void Awake()
         {
             instance = this;
+        }
+
+        private void OnDestroy()
+        {
+            destroyed = true;
         }
 
         public void Add(IWindAffected windAffected)
