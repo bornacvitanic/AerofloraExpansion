@@ -45,13 +45,9 @@ namespace AerofloraExpansion.Wind
 
             if (timeSinceLastUpdate > directionChangeSpeed)
             {
-                float perlinTime = Time.time * directionChangeFrequency;
-        
-                // Using Perlin noise with offset to make the direction change more gradually
-                float perlinX = Mathf.PerlinNoise(perlinTime + perlinOffset.x, 0) * 2 - 1;
-                float perlinZ = Mathf.PerlinNoise(perlinTime + perlinOffset.y, 0) * 2 - 1;
+                Vector2 newDirection = Random.insideUnitCircle;
 
-                targetWindDirection = new Vector3(perlinX, 0, perlinZ).normalized;
+                targetWindDirection = new Vector3(newDirection.x, 0, newDirection.y).normalized; 
 
                 lastDirectionUpdateTime = Time.time;
             }
