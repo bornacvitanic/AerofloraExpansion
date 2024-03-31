@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8074759822152649834}
   - component: {fileID: 4678682898957611871}
   - component: {fileID: 3595116159760712077}
+  - component: {fileID: 1837603218585289015}
   m_Layer: 0
   m_Name: FlowerSeed
   m_TagString: Untagged
@@ -91,6 +92,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228640cb35a54deda58fe7a3b01e75be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1837603218585289015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3377728032211877557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd564cdb0038a9449ef6342a5dac89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 25
 --- !u!1 &6937904417354323270
 GameObject:
   m_ObjectHideFlags: 0

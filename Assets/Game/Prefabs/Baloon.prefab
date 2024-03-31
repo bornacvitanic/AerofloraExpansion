@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 9143578819298806177}
   - component: {fileID: 4394394748732654250}
   - component: {fileID: 512213390755186132}
+  - component: {fileID: -5428617042867841143}
   m_Layer: 0
   m_Name: Baloon
   m_TagString: Untagged
@@ -167,6 +168,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-5428617042867841143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867420516338610414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd564cdb0038a9449ef6342a5dac89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 150
 --- !u!1001 &4511950369400797000
 PrefabInstance:
   m_ObjectHideFlags: 0
