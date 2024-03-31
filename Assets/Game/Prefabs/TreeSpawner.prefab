@@ -47,6 +47,7 @@ MonoBehaviour:
   enviromentParent: {fileID: 0}
   spawnCountAttempts: 100
   prefabsToSpawn:
+  - {fileID: 5056000061303201918, guid: d941f8b3f20046e4484140a1c7abb114, type: 3}
   - {fileID: 5056000061303201918, guid: ca5c948344ae0ca40b94f58e4216d3f6, type: 3}
   layerMaskForSpawning:
     serializedVersion: 2
