@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class DeathAfterDelay : MonoBehaviour
+namespace AerofloraExpansion.Spawning
 {
-    [SerializeField] private float delay;
-
-    private void Start()
+    public class DeathAfterDelay : MonoBehaviour
     {
-        Destroy(gameObject, delay);
+        [SerializeField] private float delay;
+
+        private void Start()
+        {
+            Destroy(gameObject, delay);
+        }
     }
 }
