@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1909722975674825175}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.127, z: -0.065}
+  m_LocalPosition: {x: -0.06, y: 0.697, z: -0.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,7 +54,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7a7d6757936624c4f81836f1d0135c6b, type: 2}
+  - {fileID: 2100000, guid: 6ad7904874078e849a2e7a06700580e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +83,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909722975674825175}
-  m_Mesh: {fileID: 513274840624996744, guid: d898273ee03a06941865608dd05a8860, type: 3}
+  m_Mesh: {fileID: 8024437979409659524, guid: 747c436de4170764bb8758e75616d2a1, type: 3}
 --- !u!114 &7097623799687392852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3180474087077966656}
   - component: {fileID: 1263497812030613815}
   m_Layer: 0
-  m_Name: Grass
+  m_Name: Corn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
