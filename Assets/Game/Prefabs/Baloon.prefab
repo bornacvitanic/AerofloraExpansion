@@ -136,6 +136,7 @@ MonoBehaviour:
   seedPrefabs:
   - {fileID: 3377728032211877557, guid: cd399e2a32a7a5448a77a2ccf3c5750a, type: 3}
   - {fileID: 3377728032211877557, guid: c5eba262869663d4a8fd7c5df4016f2c, type: 3}
+  - {fileID: 3377728032211877557, guid: 2009d06e790e3e74bbf03307574f09a2, type: 3}
   seedSpawnInterval: 0.3
   seedInitialVelocity: 3
   origin: {fileID: 7908876970538229132}
