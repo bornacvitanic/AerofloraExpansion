@@ -3,7 +3,7 @@ Aeroflora Expansion: Immerse yourself in a tranquil experience where the ever-ch
 Controls:
 Left Click on the barn to release balloons, and Left Click on each balloon to release seeds that blossom into lush flora upon descent, all while the wind's whimsical shifts challenge your planning skills. Navigate the environment with intuitive camera controls: left-click to move, scroll wheel to zoom, right-click, and middle-click to rotate around focal points.
 
-![aeroflora_expansion](https://github.com/bornacvitanic/AerofloraExpansion/assets/16841000/4a0ac3d8-4b0d-4553-900f-8b7bd7be75c6)
+[![aeroflora_expansion](https://github.com/bornacvitanic/AerofloraExpansion/assets/16841000/4a0ac3d8-4b0d-4553-900f-8b7bd7be75c6)](https://youtu.be/plE0XbJZ1NA)
 ![aeroflora_expansion_gameplay_4](https://github.com/bornacvitanic/AerofloraExpansion/assets/16841000/21bf58bd-ae63-4152-bcf9-45f090af88fa)
 
 https://itch.io/jam/mini-jam-155-wind \
